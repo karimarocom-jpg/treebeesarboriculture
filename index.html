@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#173d2b">
+  <meta name="description" content="Tree Bees Arboriculture LLC provides tree pruning, tree removal, tree health assessments, planting, stump grinding, emergency tree care, and arborist consulting in Glenrock, Wyoming.">
+  <meta name="robots" content="index, follow">
+  <title>Tree Bees Arboriculture LLC | Professional Tree Care</title>
+
+  <style>
+    :root {
+      --forest: #173d2b;
+      --forest-dark: #102d20;
+      --green: #2f6744;
+      --gold: #d9a441;
+      --cream: #f8f6ef;
+      --white: #ffffff;
+      --text: #27362d;
+      --muted: #68756b;
+      --border: #e5e7dd;
+      --shadow: 0 16px 45px rgba(23, 61, 43, 0.09);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: 0 auto;
+    }
+
+    .topbar {
+      background: var(--forest-dark);
+      color: #eaf0e9;
+      font-size: 13px;
+      padding: 9px 0;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .topbar a:hover { color: var(--gold); }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: var(--forest);
+      color: var(--gold);
+      font-size: 28px;
+    }
+
+    .brand-name {
+      color: var(--forest);
+      font-size: 16px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .brand-caption {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: var(--green); }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 13px 21px;
+      border-radius: 7px;
+      background: var(--gold);
+      color: var(--forest-dark);
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s, background .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+      background: #e8b956;
+    }
+
+    .button-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.65);
+      color: white;
+    }
+
+    .button-outline:hover { background: rgba(255,255,255,.1); }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(83,130,82,.35), transparent 35%),
+        linear-gradient(120deg, #102d20 0%, #173d2b 58%, #315b3d 100%);
+      color: white;
+      padding: 105px 0 110px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -130px;
+      bottom: -240px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(217,164,65,.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 50px rgba(217,164,65,.04),
+                  0 0 0 100px rgba(217,164,65,.035);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 22px;
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 27px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(40px, 6.2vw, 70px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+    }
+
+    h1 span { color: var(--gold); }
+
+    .hero p {
+      max-width: 610px;
+      color: #e0e9df;
+      font-size: 18px;
+      line-height: 1.85;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .trust-strip {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      padding: 27px 0;
+      gap: 20px;
+    }
+
+    .trust-item {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .trust-icon {
+      width: 39px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--green);
+      font-size: 19px;
+    }
+
+    section { padding: 88px 0; }
+
+    .section-heading {
+      max-width: 680px;
+      margin: 0 auto 44px;
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      color: var(--forest);
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading p, .muted { color: var(--muted); }
+
+    .services { background: var(--cream); }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 19px;
+    }
+
+    .service-card {
+      min-height: 235px;
+      padding: 27px 22px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: white;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .service-icon {
+      width: 49px;
+      height: 49px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      background: #edf3e9;
+      border-radius: 12px;
+      font-size: 24px;
+    }
+
+    .service-card h3 {
+      color: var(--forest);
+      font-size: 17px;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-visual {
+      position: relative;
+      min-height: 390px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 18px;
+      background:
+        radial-gradient(ellipse at 50% 10%, rgba(217,164,65,.2), transparent 38%),
+        linear-gradient(145deg, #315b3d, #102d20);
+    }
+
+    .tree-art {
+      color: #dce8d5;
+      font-size: clamp(110px, 20vw, 220px);
+      line-height: 1;
+      text-shadow: 0 12px 35px rgba(0,0,0,.15);
+    }
+
+    .visual-label {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,.96);
+      border-radius: 10px;
+      color: var(--forest);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .about-copy .eyebrow { margin-bottom: 14px; }
+
+    .about-copy p { color: var(--muted); }
+
+    .check-list {
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 28px;
+    }
+
+    .check-list li {
+      margin: 12px 0;
+      display: flex;
+      gap: 11px;
+      font-size: 15px;
+    }
+
+    .check-list li::before {
+      content: "✓";
+      display: inline-grid;
+      place-items: center;
+      width: 23px;
+      height: 23px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: #edf3e9;
+      color: var(--green);
+      font-weight: 800;
+    }
+
+    .contact-section { background: var(--cream); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 35px;
+      align-items: stretch;
+    }
+
+    .contact-intro {
+      padding: 35px 10px 25px 0;
+    }
+
+    .contact-intro p { color: var(--muted); }
+
+    .contact-details {
+      display: grid;
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .contact-row {
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+    }
+
+    .contact-row .service-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .contact-row h3 {
+      margin: 0 0 4px;
+      color: var(--forest);
+      font-size: 14px;
+    }
+
+    .contact-row p, .contact-row a {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-row a:hover { color: var(--green); }
+
+    .contact-card {
+      padding: 38px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card h3 {
+      color: var(--forest);
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p { color: var(--muted); }
+
+    .contact-card .button {
+      margin: 12px 0 18px;
+    }
+
+    .business-id {
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    .cta {
+      padding: 62px 0;
+      background: var(--forest);
+      color: white;
+    }
+
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .cta h2 {
+      color: white;
+      font-size: clamp(26px, 3.5vw, 36px);
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      margin: 0;
+      color: #dbe6d9;
+    }
+
+    footer {
+      padding: 47px 0 20px;
+      background: var(--forest-dark);
+      color: #e3ebe2;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    footer p {
+      max-width: 350px;
+      color: #bdcdbd;
+      font-size: 13px;
+    }
+
+    footer h3 {
+      color: var(--gold);
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 10px;
+      font-size: 13px;
+      color: #d0ddd0;
+    }
+
+    .footer-links a:hover { color: var(--gold); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,.14);
+      color: #bdcdbd;
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px) {
+      .nav { flex-wrap: wrap; padding: 14px 0; }
+      .nav-links { gap: 16px; flex-wrap: wrap; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { gap: 35px; }
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner { justify-content: center; text-align: center; }
+      .nav { justify-content: center; }
+      .brand { margin-right: auto; }
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 17px;
+        font-size: 13px;
+      }
+      .nav-links .nav-cta { display: none; }
+      .hero { padding: 75px 0 82px; }
+      h1 { letter-spacing: -1.4px; }
+      .hero p { font-size: 16px; }
+      .trust-inner { grid-template-columns: 1fr; gap: 15px; }
+      .trust-item { justify-content: flex-start; }
+      section { padding: 65px 0; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .about-grid, .contact-grid, .footer-main { grid-template-columns: 1fr; }
+      .about-visual { min-height: 280px; }
+      .contact-intro { padding: 0; }
+      .contact-card { padding: 26px; }
+      .cta-inner { align-items: flex-start; flex-direction: column; }
+      .footer-main { gap: 25px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Tree Bees Arboriculture LLC",
+    "description": "Tree-care and arborist services, including pruning, tree removal, tree health assessments, planting, stump grinding, emergency tree care and arborist consulting.",
+    "email": "contact@treebeesarboriculture.space",
+    "telephone": "+13079994765",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "710 West Deer Street, Pro Box 2124",
+      "addressLocality": "Glenrock",
+      "addressRegion": "WY",
+      "postalCode": "82637",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Professional Tree Care & Arboriculture</span>
+      <span>
+        <a href="tel:+13079994765">+1 307-999-4765</a>
+        &nbsp; · &nbsp;
+        <a href="mailto:contact@treebeesarboriculture.space">Email Us</a>
+      </span>
+    </div>
+  </div>
+
+  <header>
+    <nav class="container nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Tree Bees Arboriculture LLC home">
+        <span class="brand-mark" aria-hidden="true">♣</span>
+        <span class="brand-name">
+          Tree Bees
+          <span class="brand-caption">Arboriculture LLC</span>
+        </span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+       
+		<a class="button nav-cta" href="#contact">Get in Touch</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">Tree Care · Arborist Services</div>
+        <h1>Healthy Trees.<br><span>Stronger Landscapes.</span></h1>
+        <p>
+          Tree Bees Arboriculture LLC provides tree-care and arborist services
+          focused on tree health, thoughtful maintenance, responsible removal,
+          and the long-term preservation of outdoor spaces.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="#services">Explore Our Services</a>
+          <a class="button button-outline" href="#contact">Contact Our Team</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">🌳</span>
+          <span>Tree Health & Preservation</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">✂</span>
+          <span>Pruning & Property Maintenance</span>
+        </div>
+        <div class="trust-item">
+          <span class="trust-icon" aria-hidden="true">♧</span>
+          <span>Complete Arboriculture Services</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">What We Do</div>
+          <h2>Tree Care for Every Season</h2>
+          <p>
+            From routine maintenance to difficult tree-care situations, our
+            service offerings support healthier trees and well-maintained
+            outdoor environments.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🌿</div>
+            <h3>Tree Pruning & Trimming</h3>
+            <p>Manage tree growth, remove selected branches, and support healthy tree structure and appearance.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🌲</div>
+            <h3>Tree & Hazardous Tree Removal</h3>
+            <p>Tree removal services for unwanted, damaged, or hazardous trees, with attention to surrounding property.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🔎</div>
+            <h3>Tree Health Assessments</h3>
+            <p>Tree health inspections and assessments to help identify visible concerns and potential care needs.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🌱</div>
+            <h3>Tree Planting</h3>
+            <p>Tree planting and landscape preservation services designed to support thriving outdoor spaces.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🪵</div>
+            <h3>Stump Grinding & Brush Chipping</h3>
+            <p>Removal and processing of tree stumps and brush to help keep landscapes clean and usable.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">⚠</div>
+            <h3>Emergency Tree Care</h3>
+            <p>Tree-care assistance for urgent situations involving storm damage, fallen limbs, or potentially dangerous trees.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🌼</div>
+            <h3>Hedge & Bush Trimming</h3>
+            <p>Maintain hedges and shrubs with trimming that supports a neat, balanced landscape appearance.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">🌳</div>
+            <h3>Arborist Consulting & Tree Cabling</h3>
+            <p>Consulting on tree-care needs and structural support options, including tree cabling where appropriate.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-visual" aria-label="Decorative illustration representing tree care">
+          <div class="tree-art" aria-hidden="true">♣</div>
+          <div class="visual-label">
+            Thoughtful tree care. Responsible landscape stewardship.
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <div class="eyebrow">About Our Company</div>
+          <h2>Care for Trees. Respect for Nature.</h2>
+          <p>
+            Tree Bees Arboriculture LLC is a tree-care and arborist services
+            company based in Glenrock, Wyoming. Our service focus encompasses
+            tree maintenance, tree health, landscape preservation, and practical
+            solutions for tree-related concerns.
+          </p>
+          <p>
+            We recognize the important role trees play in the character,
+            comfort, and environmental value of outdoor spaces. Our range of
+            services is intended to help property owners make informed
+            decisions about maintaining and managing their trees.
+          </p>
+          <ul class="check-list">
+            <li>Tree maintenance and pruning services</li>
+            <li>Tree health and structural care considerations</li>
+            <li>Tree removal and cleanup services</li>
+            <li>Planting and landscape preservation</li>
+          </ul>
+          <a class="button" href="#contact">Contact Tree Bees</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <div class="eyebrow">Contact Us</div>
+          <h2>Let's Talk About Your Trees</h2>
+          <p>
+            Contact Tree Bees Arboriculture LLC to discuss your tree-care
+            requirements, request service information, or ask about our
+            arboriculture offerings.
+          </p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-intro">
+            <h3>We're Here to Help</h3>
+            <p>
+              Reach out by email or phone. Tell us about your property,
+              the tree-care services you need, and any concerns you would
+              like to discuss.
+            </p>
+
+            <div class="contact-details">
+              <div class="contact-row">
+                <div class="service-icon" aria-hidden="true">✉</div>
+                <div>
+                  <h3>Email</h3>
+                  <a href="mailto:contact@treebeesarboriculture.space">contact@treebeesarboriculture.space</a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <div class="service-icon" aria-hidden="true">☎</div>
+                <div>
+                  <h3>Phone</h3>
+                  <a href="tel:+13079994765">+1 307-999-4765</a>
+                </div>
+              </div>
+
+              <div class="contact-row">
+                <div class="service-icon" aria-hidden="true">⌖</div>
+                <div>
+                  <h3>Business Address</h3>
+                  <p>710 West Deer Street, Pro Box 2124<br>Glenrock, Wyoming 82637, USA</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card">
+            <div class="eyebrow">Get in Touch</div>
+            <h3>How Can We Assist You?</h3>
+            <p>
+              Send us an email with your questions or service requirements.
+              We look forward to hearing from you.
+            </p>
+            <a class="button" href="mailto:contact@treebeesarboriculture.space?subject=Tree%20Care%20Inquiry">
+              Email Our Team &rarr;
+            </a>
+            <div class="business-id">
+              <strong>Registered Business Name</strong><br>
+              Tree Bees Arboriculture LLC<br><br>
+              <strong>Filing ID</strong><br>
+              2024-001456035
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container cta-inner">
+        <div>
+          <h2>Give Your Trees the Attention They Deserve.</h2>
+          <p>Contact us to discuss your tree-care and arboriculture needs.</p>
+        </div>
+        <a class="button" href="mailto:contact@treebeesarboriculture.space">Contact Us Today</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-main">
+        <div>
+          <div class="footer-brand">Tree Bees Arboriculture LLC</div>
+          <p>
+            Tree-care and arborist services supporting tree health,
+            landscape maintenance, and responsible tree management.
+          </p>
+        </div>
+
+        <div>
+          <h3>Explore</h3>
+          <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About Us</a>
+            <a href="#services">Our Services</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <h3>Legal & Contact</h3>
+          <div class="footer-links">
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <a href="privacy-policy.html#website-privacy">Website Privacy Policy</a>
+            <a href="privacy-policy.html#mobile-app-privacy">Mobile Apps Privacy Policy</a>
+            <a href="mailto:contact@treebeesarboriculture.space">Email Us</a>
+            <a href="tel:+13079994765">+1 307-999-4765</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; <span id="year">2026</span> Tree Bees Arboriculture LLC. All rights reserved.</span>
+        <span>Glenrock, Wyoming, USA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
